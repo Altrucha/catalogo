@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TechStore</title>
+        <link rel="stylesheet" href="estilos.css" />
+    </head>
+    <body>
+        <header class="barra_superior">
+            <div class="logo-container">
+                <h1>TechStore</h1>
+            </div>
+            <nav class="barra_superior_acciones">
+                <button id="btn_abrir_carrito" class="boton_primario">
+                    🛒 Carrito (<span id="contador_carrito">0</span>)
+                </button>
+            </nav>
+        </header>
+        <main class="catalogo_main">
+            <div class="catalogo_contenedor">
+                <aside class="filtros_panel">
+                    <h3>Categorías</h3>
+                    <div class="filtro_grupo" id="contenedor_filtros">
+                        <button
+                            class="boton_secundario filtro_btn activo"
+                            data-categoria="Todas"
+                        >
+                            Todas
+                        </button>
+                    </div>
+                </aside>
+                <div class="catalogo_contenido">
+                    <div class="catalogo_encabezado">
+                        <h2>Productos</h2>
+                        <p id="resultados_info">Cargando...</p>
+                    </div>
+                    <div class="grid" id="grid_productos"></div>
+                </div>
+            </div>
+        </main>
+        <div id="modal_carrito" class="modal oculto">
+            <div class="modal_contenido tarjeta_interactiva">
+                <div class="modal_header">
+                    <h2>Carrito</h2>
+                    <button id="btn_cerrar_carrito" class="boton_secundario">
+                        Cerrar
+                    </button>
+                </div>
+                <div id="items_carrito"></div>
+                <div class="modal_footer">
+                    <h3>Total: $<span id="total_carrito">0.00</span></h3>
+                    <button class="boton_primario" id="btn_pagar">Pagar</button>
+                </div>
+            </div>
+        </div>
+        <div id="toast_notificacion" class="toast oculto">
+            Producto agregado al carrito
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
